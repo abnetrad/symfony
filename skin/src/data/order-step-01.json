@@ -1,0 +1,52 @@
+{
+    "products" : [
+        {
+            "title" : "blazer",
+            "image" : "product-blazer.svg"
+        },
+        {
+            "title" : "sweater long sleeve",
+            "image" : "product-sweater.svg"
+        },
+        {
+            "title" : "sweater sleeveless",
+            "image" : "product-sweater-sleeveless.svg"
+        },
+        {
+            "title" : "shirts",
+            "image" : "product-shirts.svg"
+        },
+        {
+            "title" : "tie",
+            "image" : "product-tie.svg"
+        },
+        {
+            "title" : "trousers",
+            "image" : "product-trousers.svg"
+        },
+        {
+            "title" : "belt",
+            "image" : "product-belt.svg"
+        },
+        {
+            "title" : "socks",
+            "image" : "product-socks.svg"
+        },
+        {
+            "title" : "shoes",
+            "image" : "product-shoes.svg"
+        },
+        {
+            "title" : "cap",
+            "image" : "product-cap.svg"
+        },
+        {
+            "title" : "wet weather jacket",
+            "image" : "product-jacket.svg"
+        },
+        {
+            "title" : "zip top bag",
+            "image" : "product-bag.svg"
+        }
+    ]
+}

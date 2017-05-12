@@ -1,0 +1,467 @@
+// SYMFONY
+@import (less) "bootstrap.css";
+@import (less) "font-awesome.css";
+@import (less) "ionicons.css";
+@import (less) "AdminLTE.css";
+@import (less) "bootstrap-datetimepicker.css";
+@import (less) "jquery-ui.css";
+@import (less) "select2.css";
+@import (less) "select2-bootstrap.css";
+@import (less) "bootstrap-editable.css";
+@import (less) "styles.css";
+@import (less) "layout.css";
+
+
+// KANGOUROUGE
+@import "../../less/bootstrap/variables";
+@import "../../less/core/class";
+@import "../../less/common/icon";
+@import "../../less/plugin/fileinput";
+
+
+.translate(@x; @y) {
+    transform: translate(@x, @y);
+}
+
+@btn-status-width: 100px;
+
+// surcharge de style kr
+.skin-black .logo{
+    background-color: #00203f;
+}
+
+body > .header .navbar{
+    background-color: #00203f;
+    height: 80px;
+}
+
+.skin-black header .navbar .nav a{
+    color: @gray-dark;
+}
+
+.skin-black .left-side{
+    background-color: @primary;
+}
+
+.sonata-bc .breadcrumb{
+    margin-top: 14px;
+    a{
+        color: #fff !important;
+    }
+}
+
+// .skin-black .navbar .nav a{
+//     color: #fff;
+// }
+
+.skin-black .navbar .nav .open > a, 
+.skin-black .navbar .nav .open > a:focus, 
+.skin-black .navbar .nav .open > a:hover, 
+.skin-black .navbar .nav > li > a:active, 
+.skin-black .navbar .nav > li > a:focus, 
+.skin-black .navbar .nav > li > a:hover{
+    color: @gray;
+    background-color: transparent;
+}
+
+body > .header .logo{
+    padding: 10px;
+    height: 80px;
+    &:hover{
+        background-color: @primary;
+    }
+}
+.logo img{
+    max-width: 160px;
+    padding: 0;
+}
+
+body > .header .navbar .sidebar-toggle{
+    background-color: transparent;
+    border-color: transparent;
+    margin: 23px 0 23px 5px;
+}
+
+body.fixed .wrapper{
+    margin-top: 80px;
+}
+.skin-black .navbar .sidebar-toggle .icon-bar{
+    background-color: #fff;
+}
+
+.skin-black .sidebar{
+    background-color: @primary;
+}
+
+.skin-black .navbar .navbar-right > .nav{
+    margin: 15px 5px 15px 0;
+}
+
+.left-side{
+    top: 80px;
+    z-index: 10;
+}
+
+.navbar-nav > li:first-child{
+    color: #fff;
+    padding: 15px;
+}
+.navbar-nav > li + li{
+    position: relative;
+    &:before{
+        content: "";
+        display: block;
+        position: absolute;
+        width: 1px;
+        height: 14px;
+        background-color: @gray;
+        top: 18px;
+    }
+}
+
+.skin-black .sidebar > .sidebar-menu > li,
+.skin-black .sidebar > .sidebar-menu > li:first-child,
+.skin-black .sidebar > .sidebar-menu > li:last-child{
+    border: 0 none;
+}
+
+.skin-black .sidebar > .sidebar-menu > li.active > a, 
+.skin-black .sidebar > .sidebar-menu > li > a:hover{
+    background-color: @primary-dark;
+}
+
+.skin-black .sidebar > .sidebar-menu > li > .treeview-menu{
+    background-color: lighten(@primary-light, 3%);
+}
+
+.box.box-primary{
+    border-top-color: @primary;
+    border-radius: 0;
+}
+
+
+// buttons
+.btn{
+    text-transform: uppercase;
+    // i.glyphicon,
+    // i.fa{
+    //     display: none;
+    // }
+    &.btn-primary{
+        background-color: @primary;
+        border-color:    @primary;
+        &:hover,
+        &:active{
+            background-color: darken(@primary, 3%);
+            border-color:     darken(@primary, 3%);
+        }
+    }
+    &.btn-default{
+        &:hover,
+        &:active{
+            background-color: darken(@gray-light, 3%);
+            border-color:     darken(@gray, 3%);
+        }
+    }
+    &[title="Edit"],
+    &[title="Delete"],
+    &[title^="switch"]{
+        border-radius: 2px;
+        padding-left:  10px;
+        padding-right: 10px;
+        margin-bottom: 5px;
+        box-shadow: 1px 1px 0px fade(#000, 40%);
+        border-color: inherit;
+        font-weight: 700;
+    }
+    &[title="Edit"]{
+        background-color: #fff;
+        color: @gray-darker;
+        border-color: @gray-dark;
+        &:hover,
+        &:active{
+            background-color: #fff;
+        }
+    }
+    &[title="Delete"]{
+        background-color: #fff;
+        color: #f44336;
+        &:hover,
+        &:active{
+            background-color: #fff;
+        }
+    }
+    &[title^="switch"]{
+        background-color: #fff;
+        color: @primary;
+        &:hover,
+        &:active{
+            background-color: #fff;
+        }
+    }
+    &.dropdown-toggle{
+        background-color: #fff;
+        border-color: @primary;
+        color: @primary;
+    }
+}
+
+.btn-group{
+    .btn{
+        border-radius: 2px !important;
+        &:not(:last-child){
+            margin-right: 5px;
+        }
+    }
+}
+
+// Forms
+@form-field-radius: 0;
+@form-field-border-color: @primary;
+@form-field-focus-border-color: @complementary;
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+input[type="url"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+input[type="datetime"],
+select,
+textarea{
+    &,
+    &.form-control{
+    .form-control;
+
+        box-shadow: none;
+        border-radius: @form-field-radius;
+        border-color: @form-field-border-color;
+        margin-bottom: 5px;
+
+
+        // FOCUS
+        &:focus{
+            box-shadow: none;
+            border-color: @form-field-focus-border-color;
+        }
+
+        &:disabled{
+          background-color: @gray-light;
+          border-color: @gray-dark;
+        }
+    }
+}
+
+// SELECT
+select::-ms-expand {
+    display: none;
+}
+
+select{
+    &,
+    &.form-control{
+        max-width: 100%;
+        -moz-appearance:none;
+        -webkit-appearance: none;
+        padding-right: 20px !important;
+        border-color: @form-field-border-color;
+        margin-bottom: 5px;
+        background: url('../@{images}/arrow-select.svg') no-repeat right center #fff;
+
+        &:disabled{
+          background-color: url('../@{images}/arrow-select-disabled.svg') no-repeat right center @gray-light;
+          border-color: @gray-dark;
+        }
+    }
+}
+
+.form-inline{
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"],
+    input[type="tel"],
+    input[type="url"],
+    input[type="number"],
+    input[type="date"],
+    input[type="time"],
+    input[type="datetime"],
+    select,
+    textarea{
+        &,
+        &.form-control{
+            margin-bottom: 0;
+        }
+    }
+}
+
+
+// TABLES
+.table-bordered,
+.table-bordered > tbody > tr > td,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > td,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > thead > tr > th{
+    border-color: @primary;
+}
+
+.table-striped > tbody > tr:nth-child(2n+1) > td, 
+.table-striped > tbody > tr:nth-child(2n+1) > th{
+    background-color: @gray-light;
+}
+
+.table > thead > tr > td,
+.table > thead > tr > th{
+    text-transform: uppercase;
+    color: @primary;
+    a{
+        color: @primary;
+    }
+}
+
+.table tbody{
+    a,
+    a:active, 
+    a:focus, 
+    a:hover{
+        color: @gray-darker;
+    }
+}
+
+// PAGINATION
+.pagination > li > a, 
+.pagination > li > span{
+    border-color: @gray-light;
+    background-color: @gray-light;
+    color: @primary;
+    box-shadow: none;
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover{
+    background-color: darken(@gray-light, 5%);
+    border-color: darken(@gray-light, 5%);
+}
+
+.pagination > .active > a,
+.pagination > .active > a:focus,
+.pagination > .active > a:hover,
+.pagination > .active > span,
+.pagination > .active > span:focus,
+.pagination > .active > span:hover{
+    background-color: @gray-darker;
+}
+
+
+
+//footer
+body{
+    margin-bottom: 75px;
+}
+#footer{
+    padding: 20px 0;
+    text-align: center;
+    color: #fff;
+    .fs12;
+    height: 75px;
+    a{
+        color: #fff;
+    }
+    background: @primary-dark;
+}
+
+.kv-file-remove {
+    .icon;
+    .icon-close;
+}
+
+
+
+.button-variant(@color; @background; @border) {
+    color: @color;
+    background-color: @background;
+    border-color: @border;
+
+    &:focus,
+    &.focus {
+        color: @color;
+        background-color: darken(@background, 10%);
+        border-color: darken(@border, 25%);
+    }
+    &:hover {
+        color: @color;
+        background-color: darken(@background, 10%);
+        border-color: darken(@border, 12%);
+    }
+    &:active,
+    &.active,
+    .open > .dropdown-toggle& {
+        color: @color;
+        background-color: darken(@background, 10%);
+        border-color: darken(@border, 12%);
+
+        &:hover,
+        &:focus,
+        &.focus {
+            color: @color;
+            background-color: darken(@background, 17%);
+            border-color: darken(@border, 25%);
+        }
+    }
+    &:active,
+    &.active,
+    .open > .dropdown-toggle& {
+        background-image: none;
+    }
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        &:hover,
+        &:focus,
+        &.focus {
+            background-color: @background;
+            border-color: @border;
+        }
+    }
+
+    .badge {
+        color: @background;
+        background-color: @color;
+    }
+}
+
+.btn{
+    &.btn-status-confirmed{
+        .button-variant(#fff; #2377ba; #2377ba);
+    }
+
+    &.btn-status-pending{
+        .button-variant(#fff; #35c2e1; #35c2e1);
+    }
+
+    &.btn-status-validated{
+        .button-variant(#fff; #3f51b5; #3f51b5);
+    }
+
+    &.btn-status-delivered{
+        .button-variant(#fff; #1ec25b; #1ec25b);
+    }
+
+    &.btn-status-cancelled{
+        .button-variant(#fff; #f39c12; #f39c12);
+    }
+
+    &.btn-status-altered{
+        .button-variant(#fff; #8e44ad; #8e44ad);
+    }
+
+    &.btn-status-delete{
+        .button-variant(#fff; #e83642; #e83642);
+    }
+}

@@ -1,0 +1,73 @@
+{# index.twig #}
+{% extends "./extends/layout.html.twig" %}
+ 
+{% block container %}
+    <h1>My orders</h1>
+
+    <main>
+        <div class="division shadow mb-30 gutter pt-15">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="table-responsive mb-30">
+                        <table class="nowrap">
+                            <thead>
+                                <tr>
+                                    <th># Order</th>
+                                    <th>Date</th>
+                                    <th>Event</th>
+                                    <th>Status</th>
+                                    <th>Details</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>012345</td>
+                                    <td>02/02/2017</td>
+                                    <td>Wimbledon 2017</td>
+                                    <td><div class="btn btn-status btn-ordered">Ordered</div></td>
+                                    <td><a href="#" class="btn btn-status upper btn-primary">Visualized order</a></td>
+                                </tr>
+                                <tr>
+                                    <td>012345</td>
+                                    <td>02/02/2017</td>
+                                    <td>Wimbledon 2017</td>
+                                    <td><div class="btn btn-status btn-ordered">Ordered</div></td>
+                                    <td><a href="#" class="btn btn-status upper btn-primary">Visualized order</a></td>
+                                </tr>
+                                <tr>
+                                    <td>012345</td>
+                                    <td>02/02/2017</td>
+                                    <td>Wimbledon 2017</td>
+                                    <td><div class="btn btn-status btn-order-validated">Order validated</div></td>
+                                    <td><a href="#" class="btn btn-status upper btn-primary">Visualized order</a></td>
+                                </tr>
+                                <tr>
+                                    <td>012345</td>
+                                    <td>02/02/2017</td>
+                                    <td>Wimbledon 2017</td>
+                                    <td><div class="btn btn-status btn-delivered">Delivered</div></td>
+                                    <td><a href="#" class="btn btn-status upper btn-primary">Visualized order</a></td>
+                                </tr>
+                                <tr>
+                                    <td>012345</td>
+                                    <td>02/02/2017</td>
+                                    <td>Wimbledon 2017</td>
+                                    <td><div class="btn btn-status btn-delivered">Delivered</div></td>
+                                    <td><a href="#" class="btn btn-status upper btn-primary">Visualized order</a></td>
+                                </tr>
+                                <tr>
+                                    <td>012345</td>
+                                    <td>02/02/2017</td>
+                                    <td>Wimbledon 2017</td>
+                                    <td><div class="btn btn-status btn-cancelled">Cancelled</div></td>
+                                    <td><a href="#" class="btn btn-status upper btn-primary">Visualized order</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+{% endblock %}

@@ -1,0 +1,43 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\Common\Collections\Collection;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="customer")
+ */
+class Customer
+{
+   
+    /**
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    private $name;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    private $lastName;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $adress;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Product", mappedBy="customer")
+     * @var Collection
+     */
+    private $products;
+
+}

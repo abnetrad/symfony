@@ -1,0 +1,99 @@
+{# index.twig #}
+{% extends "./extends/layout.html.twig" %}
+ 
+{% block page %}
+    <div class="container">
+
+        <main>
+            <h1>NEW ORDER <br>
+            WIMBLEDON 2017</h1>
+
+            <div class="row flex around-xs first-login">
+                <div class="col-lg-6 col-md-7 col-xs-10 col-xxs-12 mb-100">
+                    <section class="division shadow">
+                        <header class="hidden-xxs">
+                            <img src="uploads/upload-03.jpg" alt="">
+                        </header>
+                        <div class="content">
+                            <div class="text-center">
+                                <h4>Please, update your infos</h4>
+                            </div>
+                            <form action="#" class="horizontal-form">
+                                <div class="form-group">
+                                    <div class="label required">Function</div>
+                                    <div>
+                                        <div class="radio">
+                                            <input  id="line-umpire" type="radio" name="function" required>
+                                            <label for="line-umpire">Line Umpire</label>
+                                        </div>
+                                        <div class="radio">
+                                            <input  id="chair-umpire" type="radio" name="function" required>
+                                            <label for="chair-umpire">Chair Umpire</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="label required">Sexe</div>
+                                    <div>
+                                        <div class="radio">
+                                            <input  id="male" type="radio" name="sexe" required>
+                                            <label for="male">Male</label>
+                                        </div>
+                                        <div class="radio">
+                                            <input  id="Female" type="radio" name="sexe" required>
+                                            <label for="Female">Female</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="first-name" class="required">First name</label>
+                                    <input  id="first-name" type="text" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="last-name" class="required">Last name</label>
+                                    <input  id="last-name" type="text" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="required">E-mail</label>
+                                    <input  id="email" type="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="tel" class="required">Telephone</label>
+                                    <input  id="tel" type="tel" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Password" class="required">Password</label>
+                                    <input  id="Password" type="password" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirmed-password" class="required">Confirm password</label>
+                                    <input  id="confirmed-password" type="password" required>
+                                </div>
+                                <div class="form-group">
+                                    <div class="label required"></div>
+                                    <div>
+                                        <div class="checkbox">
+                                            <input  id="accept" type="checkbox" name="CGU" required>
+                                            <label for="accept">I agree with the CGU</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-primary ml-auto">Update</button>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+
+
+            <p class="text-center mb-100">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias saepe, illum suscipit a consequuntur sapiente nemo iste accusantium totam voluptatum dolores est cupiditate harum, officia fugit similique expedita magni voluptatibus : <a href="#">lien vers la page</a>
+            </p>
+
+        </main>
+
+    </div>
+{% endblock %}

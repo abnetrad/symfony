@@ -1,0 +1,38 @@
+#header{
+    background: @primary;
+    background: linear-gradient(to bottom, fade(@primary-light, 100%) 0%,fade(@primary-dark, 100%) 100%);
+    // z-index: 1100;
+    .transition();
+    padding: 5px 0;
+    margin-bottom: 20px;
+
+    > .container{
+        display: flex;
+        .navbar-brand{
+            height: auto;
+        }
+        .navbar-header{
+            a{
+                color: #fff;
+            }
+        }
+
+        nav.menu{
+            margin-left: auto;
+            @media (max-width: @grid-float-breakpoint){
+                margin-right: auto;    
+            }
+        }
+    }
+}
+
+@media (max-width: @screen-xs-max){
+    .navbar-header{
+        flex: 1 0 auto;
+        text-align: center;
+        > a{
+            display: inline-block;
+            float: none;
+        }
+    }
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Order review</title>
+<link href="../css/email.css" media="all" rel="stylesheet" type="text/css" />
+
+<style>
+    /* -------------------------------------
+    RESPONSIVE AND MOBILE FRIENDLY STYLES
+    Need to be inline, not in less file, due to a bug in gulp-inline-css
+    ------------------------------------- */
+    @media only screen and (max-width: 640px) {
+      body {
+        padding: 0 !important;
+      }
+
+      h1, h2, h3, h4 {
+        font-weight: 800 !important;
+        margin: 20px 0 5px !important;
+      }
+
+      h1 {
+        font-size: 22px !important;
+      }
+
+      h2 {
+        font-size: 18px !important;
+      }
+
+      h3 {
+        font-size: 16px !important;
+      }
+
+      .container {
+        padding: 0 !important;
+        width: 100% !important;
+      }
+
+      .content {
+        padding: 20px 0 30px !important;
+      }
+
+      .content-wrap {
+        padding: 10px !important;
+      }
+
+      .invoice {
+        width: 100% !important;
+      }
+    }
+
+    /*# sourceMappingURL=styles.css.map */
+</style>
+</head>
+
+<body itemscope itemtype="http://schema.org/EmailMessage">
+
+<table class="body-wrap">
+    <tr>
+        <td></td>
+        <td class="container" width="600">
+            <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="aligncenter fs11">If you don’t see this mail, Please <a href="{{ newsletter.url }}" class="fs11">follow this link</a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="../images/logo-email.png" alt="Ralph Lauren uniform" />
+                    </td>
+                </tr>
+            </table>
+            <div class="content">
+                <table class="main" width="100%" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>
+                            <img src="../images/email-header.png" alt="" class="full-width" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="content-wrap">
+                            <table width="100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td class="content-block">
+                                        <!-- Dear Matthew Morrissey, -->
+                                        Dear {{ user.firstname }} {{ user.lastname }},
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="content-block">
+                                        Mr. or Ms. {{ customer.lastname }} has just ordered his/her uniform on the RL-Uniforms website.
+                                        Please kindly review and approve it by clicking here <a href="{{ link.url }}">link.</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="content-block">
+                                        If you approve the order Mr./Ms. {{ customer.lastname }} and Ralph Lauren will receive a confirmation.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="content-block">
+                                        If you do not approve the order, only Mr/Ms {{ customer.lastname }} will be notified. Please liaise with him/her to update the order. 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="content-block">
+                                        In case of any questions please contact a Ralph Lauren representative.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="content-block">
+                                        Thank you. <br />
+                                        The Ralph Lauren Team.
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="bg bg-primary">If you have any question please, <br /> contact us at <a href="mailto:support@rl-uniforms.com">support@rl-uniforms.com</a></td>
+                </tr>
+            </table>
+        </td>
+        <td></td>
+    </tr>
+</table>
+
+</body>
+</html>

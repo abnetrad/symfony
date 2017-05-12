@@ -1,0 +1,9 @@
+skin
+deploy
+docs
+fixtures
+log
+etc/config/nginx/*_dev.conf
+etc/config/php/*_dev.conf
+htdocs/app/cache/*
+htdocs/app/logs/*

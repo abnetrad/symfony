@@ -1,0 +1,319 @@
+@slide-speed: .25s;
+
+[class$="-button"]{
+    border: 0 none;
+    background: @gray-light;
+}
+
+.close-button{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    .square(50px);
+    padding: 0;
+    border-radius: 100%;
+    background: darken(@brand-primary, 3%);
+    box-shadow: 0 0 5px rgba(0, 0, 0, .15);
+    touch-action: manipulation;
+
+    transform: translate(0, -200%);
+    transition: transform .3s linear .25s;
+
+    &:before,
+    &:after{
+        content: "";
+        display: block;
+        background: #fff;
+        border-radius: 4px;
+        .size(30px, 3px);
+        top: 50%; left: 50%;
+        position: absolute;
+
+        animation-duration: .25s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in;
+    }
+
+    &:before{
+        animation-name: backToClose-before;
+
+    }
+    &:after{
+        animation-name: backToClose-after;
+    }
+}
+
+@media (max-width: @grid-float-breakpoint-max){
+    #open-button{
+        border: 0 none;
+        background: transparent;
+        .icon-bar{
+            background: @brand-primary;
+            .transition;
+        }
+    }
+
+    #kr-menu{
+        position: fixed;
+        width: 100%; max-width: 360px;
+        height: 100vh;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 10;
+        padding-top: 80px;
+        background: @gray-darker;
+        box-shadow: 3px 0 5px rgba(0, 0, 0, .6);
+
+        transform: translate(-130%, 0);
+        transition: transform @slide-speed cubic-bezier(.7,.3,1,.6);
+
+        .buttons-container{
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 80px; width: 100%;
+            z-index: 10;
+            background: lighten(@gray-darker, 3%);
+            -webkit-clip-path: polygon(0% 50%, 100% 100%, 100% 0%, 0% 0%);
+                   -clip-path: polygon(0% 50%, 100% 100%, 100% 0%, 0% 0%);
+
+            background: linear-gradient(to bottom,  @gray-base 0%, darken(@brand-primary, 20%) 100%);
+
+        }
+
+
+
+        ul.menu{
+            margin: 0;
+            height: 100%;
+            > li{
+                position: static;
+                border-bottom: 1px solid lighten(@gray-dark, 10%);
+                > a{
+                    display: block;
+                    padding: 1.5em;
+                    color: @brand-primary;
+                    &:hover{
+                        background: lighten(@gray-dark, 1%);
+                        .transition;
+                    }
+                }
+            }
+        }
+    }
+
+    .kr-menu-sublevel{
+        &:extend(#kr-menu);
+        overflow-y: auto;
+        display: flex;
+        flex-flow: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        box-shadow: 3px 0 5px rgba(0, 0, 0, .6);
+        > li{
+            flex: 0 0 auto;
+            width: 100%;
+            border-bottom: 1px solid lighten(@gray-dark, .5%);
+            > a{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                padding: .7em;
+                &:hover{
+                    text-decoration: none;
+                    color: @brand-primary;
+                    background: lighten(@gray-dark, 1%);
+                    .transition;
+                }
+                img{
+                    flex: 0 0 33%;
+                    max-width: 33%;
+                    min-width: 0;
+                    min-height: 0;
+                }
+                span{
+                    padding-left: .7em;
+                }
+            }
+        }
+    }
+
+
+    // SHOW MENU
+    .show-menu{
+        overflow-y: hidden;
+            
+        
+        #kr-menu{
+            transform: translate(0, 0);
+            transition: transform .5s cubic-bezier(.3,.7,.6,1);
+
+            .buttons-container{
+                .close-button,
+                .back-button{
+                    transform: translate(0, 0);
+                }
+            }
+            .close-button{
+                display: block;
+                z-index: 13;
+            }
+
+            li.active .kr-menu-sublevel{
+                transform: translate(0, 0);
+                transition: transform .5s cubic-bezier(.7,.3,1,.6);
+            }
+        }
+
+            
+
+        #fog{
+            .opacity(1);
+            visibility: visible;
+        }
+    }
+
+    .show-menu-sublevel{
+        #kr-menu{
+            animation-name: scale;
+            animation-duration: .3s;
+
+            .close-button{
+                &:before,
+                &:after{
+                    animation-duration: .4s;
+                    animation-fill-mode: forwards;
+                    animation-direction: alternate;
+                    animation-timing-function: ease-out;
+                }
+                &:before{
+                    animation-name: closeToBack-before;
+                }
+                &:after{
+                    animation-name: closeToBack-after;
+                }
+            }
+        }
+    }
+}
+
+
+#fog{
+    position: fixed;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    background: fade(#000, 70%);
+    .opacity(0);
+    visibility: hidden;
+    .transition;
+    transition-delay: @slide-speed;
+}
+
+.show-menu #fog{
+    transition-delay: 0s;
+}
+
+svg{
+    margin: 0;
+    height: 0; width: 0;
+    position: absolute;
+}
+
+
+
+// ANIMATIONS
+
+@keyframes closeToBack-before{
+    0%{transform: translate3d(-50%, -50%, 0) rotate(45deg);}
+    49%{transform: translate3d(-50%, 0, 0) rotate(0);transform-origin: center center;}
+    50%{transform: translate3d(-50%, 0, 0) rotate(0) scaleX(1);transform-origin: left center;}
+    100%{transform: translate3d(-9px,-1px,0) rotate(-50deg) scaleX(.6);transform-origin: left center;}
+}
+
+
+@keyframes closeToBack-after{
+    0%{transform: translate3d(-50%, -50%, 0) rotate(-45deg);}
+    49%{transform: translate3d(-50%, 0, 0) rotate(0);transform-origin: center center;}
+    50%{transform: translate3d(-50%, 0, 0) rotate(0) scaleX(1);transform-origin: left center;}
+    100%{transform: translate3d(-9px,-2px,0) rotate(50deg) scaleX(.6); bottom: -10px;transform-origin: left center;}
+}
+
+@keyframes backToClose-before{
+    0%{transform: translate3d(-9px,-1px,0) rotate(-50deg) scaleX(.6);transform-origin: left center;}
+    49%{transform: translate3d(-50%, 0, 0) rotate(0) scaleX(1);transform-origin: left center;}
+    50%{transform: translate3d(-50%, 0, 0) rotate(0);transform-origin: center center;}
+    100%{transform: translate3d(-50%, -50%, 0) rotate(45deg);}
+}
+
+
+@keyframes backToClose-after{
+    0%{transform: translate3d(-9px,-2px,0) rotate(50deg) scaleX(.6); bottom: -10px;transform-origin: left center;}
+    49%{transform: translate3d(-50%, 0, 0) rotate(0) scaleX(1);transform-origin: left center;}
+    50%{transform: translate3d(-50%, 0, 0) rotate(0);transform-origin: center center;}
+    100%{transform: translate3d(-50%, -50%, 0) rotate(-45deg);}
+}
+
+@keyframes scale{
+    0%{
+        transform: scaleZ(1);
+    }
+    100%{
+        transform: scaleZ(.6);
+    }
+}
+
+
+
+@media (min-width: @grid-float-breakpoint){
+    [class$="-button"]{
+        .hide();
+    }
+
+
+    #kr-menu{
+        position: relative;
+        background: @gray-darker;
+
+        ul.menu{
+            display: flex;
+            justify-content: space-between;
+            .container;
+            > li{
+                position: static;
+                text-align: center;
+
+                &:active,
+                &:focus{
+                    background: @gray;
+                }
+                > a{
+                    display: block;
+                    padding: 15px;
+                    color: @brand-primary;
+                    &:hover{
+                        background: lighten(@gray-dark, 1%);
+                        .transition;
+                    }
+                    
+                }
+                > ul{
+                    display: none;
+                }
+
+                &.active{
+                    > ul{
+                        display: flex;
+                        flex-flow: row wrap;
+                        position: absolute;
+                        left: 0;
+                        background: @gray;
+                        > li{
+                            padding: 15px;
+                            flex: 0 0 200px;
+                        }    
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,47 @@
+version: '2'
+services:
+  mysql:
+    image: percona
+    ports:
+      - "3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - back
+    env_file:
+      - ./etc/config/localenv
+
+  app:
+    build: .
+    volumes:
+      - ./etc/config/nginx/nginx_dev.conf:/etc/nginx/conf.d/nginx.conf
+      - ./etc/config/php/www_dev.conf:/usr/local/etc/php-fpm.d/www.conf
+      - rluniform-unison-sync:/data
+    networks:
+      - smtp
+      - back
+      - proxy
+    ports:
+      - "80"
+    env_file:
+      - ./etc/config/localenv
+    labels:
+      - interlock.port=80
+      - interlock.hostname=rluniform
+      - interlock.network=proxy
+      - interlock.domain=dev.me
+
+volumes:
+  mysql-data:
+    driver: local
+  rluniform-unison-sync:
+    external: true
+
+networks:
+  back:
+  proxy:
+    external:
+      name: proxy
+  smtp:
+    external:
+      name: smtp

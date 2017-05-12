@@ -1,0 +1,16 @@
+version: "2"
+options:
+  verbose: false
+syncs:
+  #IMPORTANT: ensure this name is unique and does not match your other application container name
+  symfony-unison-sync:
+    src: './htdocs'
+    dest: '/data'
+    notify_terminal: false
+    sync_host_ip: '127.0.0.1'
+    sync_user: 'www-data'
+    sync_userid: '33'
+    sync_strategy: 'unison'
+    sync_args: [ '-prefer newer' ]
+    sync_excludes: [ '.git', '.idea', 'node_modules/*', 'app/cache/*', 'app/sessions/*' ]
+    sync_excludes_type: 'Path'

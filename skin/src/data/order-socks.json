@@ -1,0 +1,16 @@
+{
+    "products" : [
+        {
+            "title" : "socks",
+            "image" : "product-socks.svg"
+        },
+        {
+            "title" : "shoes",
+            "image" : "product-shoes.svg"
+        },
+        {
+            "title" : "zip top bag",
+            "image" : "product-bag.svg"
+        }
+    ]
+}

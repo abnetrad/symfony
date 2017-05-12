@@ -1,0 +1,30 @@
+#login{
+    background: @primary;
+    background: linear-gradient(to bottom, fade(@primary-light, 100%) 0%,fade(@primary-dark, 100%) 100%);
+
+    > .content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+
+        > section{
+            max-width: 425px;
+            padding: 15px;
+            z-index: 1;
+
+            @media (max-width: @screen-sm-max){
+                margin: 100px auto 100px;
+            }
+
+            a{
+                color: #fff;
+            }
+        }
+
+        + #footer{
+            background: transparent;
+            margin-top: 0;
+        }
+    }
+}

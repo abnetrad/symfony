@@ -1,0 +1,123 @@
+.order-step-02{
+    padding: 0 15px;
+
+    form{
+        .radio{
+            padding-left: 0;
+            display: inline-block;
+            label{
+                padding-left: 0;
+                margin-right: 20px;
+                &:before{
+                    left: 50%; top: 25px;
+                    margin: 0;
+                    transform: translate(-50%, 0);
+                }
+                &:after{
+                    left: 50%; top: 30px;
+                    margin: 0 0 0 -3px;
+                }
+            }
+        }
+    }
+
+    .select-hour{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        section{
+            .label{
+                .fw600;
+                color: @primary;
+            }
+
+            > div{
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                > div{
+                    flex: 0 0 110px;
+                    width: 110px;
+                    text-align: center;
+                }
+
+
+                label{
+                    padding: 6px 10px;
+                    border: 1px solid @primary;
+                    border-radius: 4px;
+                    flex: 0 0 260px;
+                    width: 260px;
+                    text-align: center;
+                    .fs18;
+                    cursor: pointer;
+
+                    &:before{
+                        content: "Available"
+                    }
+                }
+
+                input[type="radio"]{
+                    position: absolute;
+                    .square(1px);
+                    opacity: 0;
+                    &:checked + label{
+                        color: #fff;
+                        background: @green;
+                        border-color: @green;
+                        &:before{
+                            content: "Confirmed"
+                        }
+                    }
+
+                    &:disabled + label{
+                        color: #fff;
+                        background: @brand-danger;
+                        border-color: @brand-danger;
+                        &:before{
+                            content: "Full"
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .gmap{
+        margin: 0 -15px 30px;
+    }
+
+    .address{
+        max-width: 360px;
+        margin-bottom: 30px;
+        @media (min-width: @screen-xs-min){
+            margin-left: 80px;     
+        }        
+        header{
+            padding: 5px 0;
+            border-bottom: 1px solid @primary;
+            color: @primary;
+            .fs18;
+        }
+        .content{
+            padding: 3px 5px;
+        }
+    }
+
+
+
+}
+
+.order-nav{
+    display: flex;
+    width: 100%;
+    flex-flow: column wrap;
+    @media (min-width: @screen-xs-min){
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+}
+
+#size-guide .modal-body {
+    overflow: auto;
+}

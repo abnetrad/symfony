@@ -1,0 +1,540 @@
+{% block layout %}
+<!DOCTYPE html>
+<html class="">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    <link rel="stylesheet" href="css/admin.min.css">
+    <script>
+    window.SONATA_CONFIG = {
+        CONFIRM_EXIT: true,
+        USE_SELECT2: true,
+        USE_ICHECK: true
+    };
+    window.SONATA_TRANSLATIONS = {
+        CONFIRM_EXIT: 'You\x20have\x20unsaved\x20changes.'
+    };
+    </script>
+
+    <script type="text/javascript" src="js/admin.min.js"></script>
+    <title>
+        Admin Dashboard
+    </title>
+</head>
+
+<body class="sonata-bc skin-black fixed">
+    <header class="header">
+        <noscript>
+            <div class="noscript-warning">
+                Javascript is disabled in your web browser. Some features will not work properly.
+            </div>
+        </noscript>
+        <a class="logo" href="http://preprod.gegm-hubrl.vixns.net/admin/dashboard"><img src="images/logo-wimbledon.png" alt="Ralph Lauren Uniform"></a>
+        <nav class="navbar navbar-static-top" role="navigation">
+            <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <div class="navbar-left">
+            </div>
+            <div class="navbar-right">
+                <ul class="nav navbar-nav">
+                    <li>Welcome John</li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-plus-square fa-fw"></i> <i class="fa fa-caret-down"></i>
+                        </a>
+                        <div class="dropdown-menu multi-column dropdown-add">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <ul class="dropdown-menu">
+                                        <li role="presentation" class="dropdown-header">Collateral</li>
+                                        <li role="presentation">
+                                            <a role="menuitem" tabindex="-1" href="http://preprod.gegm-hubrl.vixns.net/admin/app/user/create">Users</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a role="menuitem" tabindex="-1" href="http://preprod.gegm-hubrl.vixns.net/admin/app/season/create">Seasons</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a role="menuitem" tabindex="-1" href="http://preprod.gegm-hubrl.vixns.net/admin/app/visualtype/create">POS Types</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a role="menuitem" tabindex="-1" href="http://preprod.gegm-hubrl.vixns.net/admin/app/visual/create">Visuals</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a role="menuitem" tabindex="-1" href="http://preprod.gegm-hubrl.vixns.net/admin/app/channel/create">Channels</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a role="menuitem" tabindex="-1" href="http://preprod.gegm-hubrl.vixns.net/admin/app/brand/create">Brands</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a role="menuitem" tabindex="-1" href="http://preprod.gegm-hubrl.vixns.net/admin/app/region/create">Regions</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a role="menuitem" tabindex="-1" href="http://preprod.gegm-hubrl.vixns.net/admin/app/country/create">Countries</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a role="menuitem" tabindex="-1" href="http://preprod.gegm-hubrl.vixns.net/admin/app/store/create">Stores</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a role="menuitem" tabindex="-1" href="http://preprod.gegm-hubrl.vixns.net/admin/app/corner/create">Corners</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a role="menuitem" tabindex="-1" href="http://preprod.gegm-hubrl.vixns.net/admin/app/media/create">POS Tools</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a role="menuitem" tabindex="-1" href="http://preprod.gegm-hubrl.vixns.net/admin/app/contact/create">Contacts</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a role="menuitem" tabindex="-1" href="http://preprod.gegm-hubrl.vixns.net/admin/app/rank/create">Ranking</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a role="menuitem" tabindex="-1" href="http://preprod.gegm-hubrl.vixns.net/admin/app/video/create">Videos</a>
+                                        </li>
+                                        <li role="presentation" class="divider"></li>
+                                        <li role="presentation" class="dropdown-header">Campaign</li>
+                                        <li role="presentation">
+                                            <a role="menuitem" tabindex="-1" href="http://preprod.gegm-hubrl.vixns.net/admin/app/campaign/create">Campaign Activities</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a role="menuitem" tabindex="-1" href="http://preprod.gegm-hubrl.vixns.net/admin/app/campaigndiscipline/create">Campaign Disciplines</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a role="menuitem" tabindex="-1" href="http://preprod.gegm-hubrl.vixns.net/admin/app/campaignexecution/create">Campaign Execution Details</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a role="menuitem" tabindex="-1" href="http://preprod.gegm-hubrl.vixns.net/admin/app/campaignevent/create">Campaign Events</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a role="menuitem" tabindex="-1" href="http://preprod.gegm-hubrl.vixns.net/admin/app/campaignchannel/create">Campaign Channels</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a role="menuitem" tabindex="-1" href="http://preprod.gegm-hubrl.vixns.net/admin/app/campaignbrand/create">Campaign Brands</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a role="menuitem" tabindex="-1" href="http://preprod.gegm-hubrl.vixns.net/admin/app/domain/create">Domains</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="dropdown user-menu">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <ul style="list-style-type:none;margin:10px 0;">
+                                <li><a href="http://preprod.gegm-hubrl.vixns.net/">Back to Front</a></li>
+                                <li><a href="http://preprod.gegm-hubrl.vixns.net/logout">logout</a></li>
+                            </ul>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="wrapper row-offcanvas row-offcanvas-left" style="min-height: 1201px;">
+        <aside class="left-side sidebar-offcanvas" style="min-height: 1365px;">
+            <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 1201px;">
+                <section class="sidebar" style="overflow: hidden; width: auto; height: 1201px;">
+                    <ul class="sidebar-menu">
+                        <li class="treeview active">
+                            <a href="#">
+                                <i class="fa fa-folder"></i> <span>Collateral</span>
+                                <i class="fa pull-right fa-angle-left"></i>
+                            </a>
+                            <ul class="treeview-menu" style="display: block;">
+                                <li><a href="http://preprod.gegm-hubrl.vixns.net/admin/app/user/list" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Users</a></li>
+                                <li><a href="http://preprod.gegm-hubrl.vixns.net/admin/app/season/list" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Seasons</a></li>
+                                <li><a href="http://preprod.gegm-hubrl.vixns.net/admin/app/visualtype/list" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> POS Types</a></li>
+                                <li><a href="http://preprod.gegm-hubrl.vixns.net/admin/app/visual/list" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Visuals</a></li>
+                                <li><a href="http://preprod.gegm-hubrl.vixns.net/admin/app/channel/list" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Channels</a></li>
+                                <li><a href="http://preprod.gegm-hubrl.vixns.net/admin/app/brand/list" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Brands</a></li>
+                                <li><a href="http://preprod.gegm-hubrl.vixns.net/admin/app/region/list" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Regions</a></li>
+                                <li><a href="http://preprod.gegm-hubrl.vixns.net/admin/app/country/list" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Countries</a></li>
+                                <li><a href="http://preprod.gegm-hubrl.vixns.net/admin/app/store/list" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Stores</a></li>
+                                <li><a href="http://preprod.gegm-hubrl.vixns.net/admin/app/corner/list" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Corners</a></li>
+                                <li><a href="http://preprod.gegm-hubrl.vixns.net/admin/app/media/list" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> POS Tools</a></li>
+                                <li><a href="http://preprod.gegm-hubrl.vixns.net/admin/app/contact/list" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Contacts</a></li>
+                                <li><a href="http://preprod.gegm-hubrl.vixns.net/admin/app/rank/list" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Ranking</a></li>
+                                <li><a href="http://preprod.gegm-hubrl.vixns.net/admin/app/video/list" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Videos</a></li>
+                                <li><a href="http://preprod.gegm-hubrl.vixns.net/admin/app/orderitem/list" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Orders</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-folder"></i> <span>Campaign</span>
+                                <i class="fa pull-right fa-angle-left"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="http://preprod.gegm-hubrl.vixns.net/admin/app/campaign/list" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Campaign Activities</a></li>
+                                <li><a href="http://preprod.gegm-hubrl.vixns.net/admin/app/campaigndiscipline/list" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Campaign Disciplines</a></li>
+                                <li><a href="http://preprod.gegm-hubrl.vixns.net/admin/app/campaignexecution/list" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Campaign Execution Details</a></li>
+                                <li><a href="http://preprod.gegm-hubrl.vixns.net/admin/app/campaignevent/list" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Campaign Events</a></li>
+                                <li><a href="http://preprod.gegm-hubrl.vixns.net/admin/app/campaignchannel/list" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Campaign Channels</a></li>
+                                <li><a href="http://preprod.gegm-hubrl.vixns.net/admin/app/campaignbrand/list" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Campaign Brands</a></li>
+                                <li><a href="http://preprod.gegm-hubrl.vixns.net/admin/app/domain/list" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Domains</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p class="text-center small" style="border-top: 1px solid #444444; padding-top: 10px"><a href="http://sonata-project.org/" rel="noreferrer" target="_blank">sonata project</a></p>
+                </section>
+                <div class="slimScrollBar" style="background: rgba(0, 0, 0, 0.2) none repeat scroll 0% 0%; width: 7px; position: absolute; top: -1px; opacity: 0.4; display: none; border-radius: 0px; z-index: 99; right: 1px; height: 1202px;"></div>
+                <div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 0px; background: rgb(51, 51, 51) none repeat scroll 0% 0%; opacity: 0.2; z-index: 90; right: 1px;"></div>
+            </div>
+        </aside>
+        <aside class="right-side">
+            <section class="content-header">
+            </section>
+            <section class="content">
+                <div class="sonata-ba-content">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div id="cms-block-586a0fb85fd43" class="cms-block cms-block-element">
+                                <div class="box">
+                                    <div class="box-header">
+                                        <h3 class="box-title">Collateral</h3>
+                                    </div>
+                                    <div class="box-body">
+                                        <table class="table table-hover">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="sonata-ba-list-label" width="40%">
+                                                        Users
+                                                    </td>
+                                                    <td>
+                                                        <div class="btn-group">
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/user/create">
+                                                                <i class="fa fa-plus-circle"></i> Add new </a>
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/user/list">
+                                                                <i class="glyphicon glyphicon-list"></i> List
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="sonata-ba-list-label" width="40%">
+                                                        Seasons
+                                                    </td>
+                                                    <td>
+                                                        <div class="btn-group">
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/season/create">
+                                                                <i class="fa fa-plus-circle"></i> Add new </a>
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/season/list">
+                                                                <i class="glyphicon glyphicon-list"></i> List
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="sonata-ba-list-label" width="40%">
+                                                        POS Types
+                                                    </td>
+                                                    <td>
+                                                        <div class="btn-group">
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/visualtype/create">
+                                                                <i class="fa fa-plus-circle"></i> Add new </a>
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/visualtype/list">
+                                                                <i class="glyphicon glyphicon-list"></i> List
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="sonata-ba-list-label" width="40%">
+                                                        Visuals
+                                                    </td>
+                                                    <td>
+                                                        <div class="btn-group">
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/visual/create">
+                                                                <i class="fa fa-plus-circle"></i> Add new </a>
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/visual/list">
+                                                                <i class="glyphicon glyphicon-list"></i> List
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="sonata-ba-list-label" width="40%">
+                                                        Channels
+                                                    </td>
+                                                    <td>
+                                                        <div class="btn-group">
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/channel/create">
+                                                                <i class="fa fa-plus-circle"></i> Add new </a>
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/channel/list">
+                                                                <i class="glyphicon glyphicon-list"></i> List
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="sonata-ba-list-label" width="40%">
+                                                        Brands
+                                                    </td>
+                                                    <td>
+                                                        <div class="btn-group">
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/brand/create">
+                                                                <i class="fa fa-plus-circle"></i> Add new </a>
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/brand/list">
+                                                                <i class="glyphicon glyphicon-list"></i> List
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="sonata-ba-list-label" width="40%">
+                                                        Regions
+                                                    </td>
+                                                    <td>
+                                                        <div class="btn-group">
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/region/create">
+                                                                <i class="fa fa-plus-circle"></i> Add new </a>
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/region/list">
+                                                                <i class="glyphicon glyphicon-list"></i> List
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="sonata-ba-list-label" width="40%">
+                                                        Countries
+                                                    </td>
+                                                    <td>
+                                                        <div class="btn-group">
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/country/create">
+                                                                <i class="fa fa-plus-circle"></i> Add new </a>
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/country/list">
+                                                                <i class="glyphicon glyphicon-list"></i> List
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="sonata-ba-list-label" width="40%">
+                                                        Stores
+                                                    </td>
+                                                    <td>
+                                                        <div class="btn-group">
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/store/create">
+                                                                <i class="fa fa-plus-circle"></i> Add new </a>
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/store/list">
+                                                                <i class="glyphicon glyphicon-list"></i> List
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="sonata-ba-list-label" width="40%">
+                                                        Corners
+                                                    </td>
+                                                    <td>
+                                                        <div class="btn-group">
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/corner/create">
+                                                                <i class="fa fa-plus-circle"></i> Add new </a>
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/corner/list">
+                                                                <i class="glyphicon glyphicon-list"></i> List
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="sonata-ba-list-label" width="40%">
+                                                        POS Tools
+                                                    </td>
+                                                    <td>
+                                                        <div class="btn-group">
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/media/create">
+                                                                <i class="fa fa-plus-circle"></i> Add new </a>
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/media/list">
+                                                                <i class="glyphicon glyphicon-list"></i> List
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="sonata-ba-list-label" width="40%">
+                                                        Contacts
+                                                    </td>
+                                                    <td>
+                                                        <div class="btn-group">
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/contact/create">
+                                                                <i class="fa fa-plus-circle"></i> Add new </a>
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/contact/list">
+                                                                <i class="glyphicon glyphicon-list"></i> List
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="sonata-ba-list-label" width="40%">
+                                                        Ranking
+                                                    </td>
+                                                    <td>
+                                                        <div class="btn-group">
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/rank/create">
+                                                                <i class="fa fa-plus-circle"></i> Add new </a>
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/rank/list">
+                                                                <i class="glyphicon glyphicon-list"></i> List
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="sonata-ba-list-label" width="40%">
+                                                        Videos
+                                                    </td>
+                                                    <td>
+                                                        <div class="btn-group">
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/video/create">
+                                                                <i class="fa fa-plus-circle"></i> Add new </a>
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/video/list">
+                                                                <i class="glyphicon glyphicon-list"></i> List
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="sonata-ba-list-label" width="40%">
+                                                        Orders
+                                                    </td>
+                                                    <td>
+                                                        <div class="btn-group">
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/orderitem/list">
+                                                                <i class="glyphicon glyphicon-list"></i> List
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="box">
+                                    <div class="box-header">
+                                        <h3 class="box-title">Campaign</h3>
+                                    </div>
+                                    <div class="box-body">
+                                        <table class="table table-hover">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="sonata-ba-list-label" width="40%">
+                                                        Campaign Activities
+                                                    </td>
+                                                    <td>
+                                                        <div class="btn-group">
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/campaign/create">
+                                                                <i class="fa fa-plus-circle"></i> Add new </a>
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/campaign/list">
+                                                                <i class="glyphicon glyphicon-list"></i> List
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="sonata-ba-list-label" width="40%">
+                                                        Campaign Disciplines
+                                                    </td>
+                                                    <td>
+                                                        <div class="btn-group">
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/campaigndiscipline/create">
+                                                                <i class="fa fa-plus-circle"></i> Add new </a>
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/campaigndiscipline/list">
+                                                                <i class="glyphicon glyphicon-list"></i> List
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="sonata-ba-list-label" width="40%">
+                                                        Campaign Execution Details
+                                                    </td>
+                                                    <td>
+                                                        <div class="btn-group">
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/campaignexecution/create">
+                                                                <i class="fa fa-plus-circle"></i> Add new </a>
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/campaignexecution/list">
+                                                                <i class="glyphicon glyphicon-list"></i> List
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="sonata-ba-list-label" width="40%">
+                                                        Campaign Events
+                                                    </td>
+                                                    <td>
+                                                        <div class="btn-group">
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/campaignevent/create">
+                                                                <i class="fa fa-plus-circle"></i> Add new </a>
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/campaignevent/list">
+                                                                <i class="glyphicon glyphicon-list"></i> List
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="sonata-ba-list-label" width="40%">
+                                                        Campaign Channels
+                                                    </td>
+                                                    <td>
+                                                        <div class="btn-group">
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/campaignchannel/create">
+                                                                <i class="fa fa-plus-circle"></i> Add new </a>
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/campaignchannel/list">
+                                                                <i class="glyphicon glyphicon-list"></i> List
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="sonata-ba-list-label" width="40%">
+                                                        Campaign Brands
+                                                    </td>
+                                                    <td>
+                                                        <div class="btn-group">
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/campaignbrand/create">
+                                                                <i class="fa fa-plus-circle"></i> Add new </a>
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/campaignbrand/list">
+                                                                <i class="glyphicon glyphicon-list"></i> List
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="sonata-ba-list-label" width="40%">
+                                                        Domains
+                                                    </td>
+                                                    <td>
+                                                        <div class="btn-group">
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/domain/create">
+                                                                <i class="fa fa-plus-circle"></i> Add new </a>
+                                                            <a class="btn btn-link btn-flat" href="http://preprod.gegm-hubrl.vixns.net/admin/app/domain/list">
+                                                                <i class="glyphicon glyphicon-list"></i> List
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </aside>
+    </div>
+</body>
+
+</html>
+{% endblock %}

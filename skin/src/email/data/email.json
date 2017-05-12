@@ -1,0 +1,15 @@
+{
+    "newsletter" : {
+        "url" : "link-to-html-version.html"
+    },
+    "user" : {
+        "firstname" : "Matthew",
+        "lastname" : "Morrissey"
+    },
+    "customer" : {
+        "lastname" : "X"
+    },
+    "link" : {
+        "url" : "#"
+    }
+}

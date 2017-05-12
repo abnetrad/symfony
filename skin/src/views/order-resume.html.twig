@@ -1,0 +1,131 @@
+{# index.twig #}
+{% extends "./extends/layout.html.twig" %}
+ 
+{% block container %}
+    <h1>Order resume <br>
+    + comment</h1>
+
+    <main>
+        <div class="bg-gray-light mb-30 radius gutter pt-15 pb-15">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <h2 class="h4 text-center">Order resume</h2>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Apparel</th>
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col">Size</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>Blazer</th>
+                                    <td>1</td>
+                                    <td>L</td>
+                                </tr>
+                                <tr>
+                                    <th>Sweater long sleeve</th>
+                                    <td>1</td>
+                                    <td>L</td>
+                                </tr>
+                                <tr>
+                                    <th>Sweater sleeveless</th>
+                                    <td>1</td>
+                                    <td>L</td>
+                                </tr>
+                                <tr>
+                                    <th>Shirts</th>
+                                    <td>1</td>
+                                    <td>L</td>
+                                </tr>
+                                <tr>
+                                    <th>Tie</th>
+                                    <td>1</td>
+                                    <td>ONE</td>
+                                </tr>
+                                <tr>
+                                    <th>Belt</th>
+                                    <td>1</td>
+                                    <td>ONE</td>
+                                </tr>
+                                <tr>
+                                    <th>Socks</th>
+                                    <td>1</td>
+                                    <td>ONE</td>
+                                </tr>
+                                <tr>
+                                    <th>Shoes</th>
+                                    <td>1</td>
+                                    <td>44</td>
+                                </tr>
+                                <tr>
+                                    <th>Cap</th>
+                                    <td>1</td>
+                                    <td>ONE</td>
+                                </tr>
+                                <tr>
+                                    <th>Wet weather jacket</th>
+                                    <td>1</td>
+                                    <td>L</td>
+                                </tr>
+                                <tr>
+                                    <th>Zip top</th>
+                                    <td>1</td>
+                                    <td>L</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">Your sunglasses wil be ordered by the LTA</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="bg-gray-light mb-30 radius gutter pt-15 appointment-location">
+            <h3 class="h4 text-center">Location of your appointment</h3>
+
+            <div class="address mb-30 pl-15">
+                <header>Cork Street Office <span class="green">June 3</span> at <span class="green">9:00 am</span></header>
+                <div class="content">
+                    15 Cork St <br>
+                    Mayfair, London <br>
+                    W1S <br>
+                    United Kingdom
+                </div>
+            </div>
+
+            <div class="gmap row">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.1769166272907!2d-0.14336408422992067!3d51.50997017963558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876052a011ef9d1%3A0x6818bb396688c7a6!2s15+Cork+St%2C+Mayfair%2C+London+W1S%2C+Royaume-Uni!5e0!3m2!1sfr!2sfr!4v1483028119949" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="division shadow mb-60 pb-40 gutter">
+            <h4 class='text-center'>Leave us a comment <span class="lower fw400 fs14">(optionnal)</span></h4>
+
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <form action="#">
+                        <div class="form-group">
+                            <label   for="comment" class="sr-only">Write here your comment...</label>
+                            <textarea id="comment" name="comment" placeholder="Write here your comment..." ></textarea>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+            
+    </main>
+
+    <div class="order-nav mb-15">
+        <a href="order-step-02.html" class="btn btn-gray mb-15">Return to step 2</a>
+        <a href="order-success.html" class="btn btn-primary mb-15">Validate your order</a>
+    </div>
+
+
+{% endblock %}

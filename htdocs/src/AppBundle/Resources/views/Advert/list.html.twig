@@ -1,0 +1,21 @@
+
+
+{%  extends 'base.html.twig' %}
+
+
+{%  block body %}
+    <a href="{{ path('product_create') }}">   <button> Nouveau produit!  </button> </a>
+
+
+    <ul>
+        {%  for product in products %}
+
+            <li><a href="{{ path('product_show', {'id':product.id}) }}"> {{ product.id }} |  {{ product.name }} </a> -
+               <a href="{{ path('product_delete', {'id':product.id}) }}">   <button> Supprimer!  </button> </a>
+               <a href="{{ path('product_edit', {'id':product.id}) }}">   <button> Modifier!  </button> </a>
+
+            </li>
+            {% endfor %}
+    </ul>
+
+{%  endblock %}

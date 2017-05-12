@@ -1,0 +1,76 @@
+.messages{
+    [class*="-msg"]{
+        ul li{
+            color: @gray-darker;
+            padding: 18px 15px;
+            text-align: left;
+            margin: 10px 0 0;
+            font-size: 12px;
+        }
+    }
+    .success-msg ul li{ background: #e9f8f3 !important;}
+      .error-msg ul li{ background: #fee5eb !important;}
+       .note-msg ul li{ background: #e9f4f8 !important;}
+     .notice-msg ul li{ background: #e9f4f8 !important;}
+}
+
+.global-msg{
+    position: fixed;
+    top: -25px;
+    left: -15px; right: -15px;
+    z-index: 1110;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+    > ul.messages{
+        margin: 0;
+        padding-bottom: 0;
+    }
+}
+
+// BREADCRUMB
+.breadcrumb {
+    padding: @breadcrumb-padding-vertical @breadcrumb-padding-horizontal;
+    margin-bottom: 0;
+    list-style: none;
+    > li {
+        display: inline-block;
+        .upper;
+        a{
+            color: @gray-dark;
+        }
+        + li:before {
+            content: "\00a0"; // Unicode space added since inline-block means non-collapsing white-space
+            .caret-right(7px, @gray-dark);
+            // vertical-align: -9px;
+            vertical-align: middle;
+            margin: 0 7px 3px 5px;
+        }
+    }
+
+    > .active {
+        color: @breadcrumb-active-color;
+    }
+}
+
+.breadcrumb-container{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid @gray-dark;
+    margin-bottom: @line-height-computed;
+    > a.back{
+        margin-left: auto;
+    }
+}
+
+a.back{
+    color: @gray;
+    &:before{
+        content: "";
+        .caret-right(7px, @gray);
+        margin-right: 7px;
+        vertical-align: -2px;
+    }
+
+    @media (max-width: @screen-xs-max){
+        display: none;
+    }
+}

@@ -1,0 +1,156 @@
+{# index.twig #}
+{% extends "./extends/layout.html.twig" %}
+ 
+{% block container %}
+
+    <h1>New order <br>
+    wimbledon 2017</h1>
+
+    <main class="division shadow order-step-02 mb-30">
+        <h2 class="h4 text-center">Step 2 of 2: Make appointment for fitting</h2>
+
+        <h3 class="h5">Select an appointment</h3>
+        <form action="">
+            <div class="form-group mb-50">
+                <div class="label required sr-only">Choose a date</div>
+                <div>
+                    <div class="radio">
+                        <input  id="06-3" type="radio" name="date" required>
+                        <label for="06-3">June 3<sup>rd</sup></label>
+                    </div>
+                    <div class="radio">
+                        <input  id="06-28" type="radio" name="date" required>
+                        <label for="06-28">June 28<sup>th</sup></label>
+                    </div>
+                    <div class="radio">
+                        <input  id="06-29" type="radio" name="date" required>
+                        <label for="06-29">June 29<sup>th</sup></label>
+                    </div>
+                    <div class="radio">
+                        <input  id="07-1" type="radio" name="date" required>
+                        <label for="07-1">July 1<sup>st</sup></label>
+                    </div>
+                    <div class="radio">
+                        <input  id="07-2" type="radio" name="date" required>
+                        <label for="07-2">July 2<sup>nd</sup></label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="select-hour">
+                <section>
+                    <div>
+                        <div class="label">AM</div>
+                    </div>
+                    <div>
+                        <div>09h00</div>
+                        <input  id="h09-00" type="radio" name="hour">
+                        <label for="h09-00"></label>
+                    </div>
+                    <div>
+                        <div>09h30</div>
+                        <input  id="h09-30" type="radio" name="hour" disabled>
+                        <label for="h09-30"></label>
+                    </div>
+                    <div>
+                        <div>10h00</div>
+                        <input  id="h10-00" type="radio" name="hour" disabled>
+                        <label for="h10-00"></label>
+                    </div>
+                    <div>
+                        <div>10h30</div>
+                        <input  id="h10-30" type="radio" name="hour" disabled>
+                        <label for="h10-30"></label>
+                    </div>
+                    <div>
+                        <div>11h00</div>
+                        <input  id="h11-00" type="radio" name="hour">
+                        <label for="h11-00"></label>
+                    </div>
+                    <div>
+                        <div>11h30</div>
+                        <input  id="h11-30" type="radio" name="hour">
+                        <label for="h11-30"></label>
+                    </div>
+                </section>
+                <section>
+                    <div>
+                        <div class="label">PM</div>    
+                    </div>
+                    <div>
+                        <div>12h00</div>
+                        <input  id="h12-00" type="radio" name="hour">
+                        <label for="h12-00"></label>
+                    </div>
+                    <div>
+                        <div>12h30</div>
+                        <input  id="h12-30" type="radio" name="hour">
+                        <label for="h12-30"></label>
+                    </div>
+                    <div>
+                        <div>13h00</div>
+                        <input  id="h13-00" type="radio" name="hour" disabled>
+                        <label for="h13-00"></label>
+                    </div>
+                    <div>
+                        <div>13h30</div>
+                        <input  id="h13-30" type="radio" name="hour" disabled>
+                        <label for="h13-30"></label>
+                    </div>
+                    <div>
+                        <div>14h00</div>
+                        <input  id="h14-00" type="radio" name="hour">
+                        <label for="h14-00"></label>
+                    </div>
+                    <div>
+                        <div>14h30</div>
+                        <input  id="h14-30" type="radio" name="hour">
+                        <label for="h14-30"></label>
+                    </div>
+                    <div>
+                        <div>15h00</div>
+                        <input  id="h15-00" type="radio" name="hour" disabled>
+                        <label for="h15-00"></label>
+                    </div>
+                    <div>
+                        <div>15h30</div>
+                        <input  id="h15-30" type="radio" name="hour">
+                        <label for="h15-30"></label>
+                    </div>
+                    <div>
+                        <div>16h00</div>
+                        <input  id="h16-00" type="radio" name="hour">
+                        <label for="h16-00"></label>
+                    </div>
+                    <div>
+                        <div>16h30</div>
+                        <input  id="h16-30" type="radio" name="hour">
+                        <label for="h16-30"></label>
+                    </div>
+                </section>
+            </div>
+        </form>
+
+        <h3 class="h5">Location of your appointment</h3>
+        <div class="gmap">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.1769166272907!2d-0.14336408422992067!3d51.50997017963558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876052a011ef9d1%3A0x6818bb396688c7a6!2s15+Cork+St%2C+Mayfair%2C+London+W1S%2C+Royaume-Uni!5e0!3m2!1sfr!2sfr!4v1483028119949" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+
+        <div class="address">
+            <header>Cork street Office</header>
+            <div class="content">
+                15 Cork St <br>
+                Mayfair, London <br>
+                W1S <br>
+                United Kingdom
+            </div>
+        </div>
+    </main>
+
+    <div class="order-nav mb-15">
+        <a href="order-step-01.html" class="btn btn-gray mb-15">Return to step 1</a>
+        <a href="order-resume.html" class="btn btn-primary mb-15">Finalize your order</a>
+    </div>
+
+
+{% endblock %}

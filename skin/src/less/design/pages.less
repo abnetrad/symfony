@@ -1,0 +1,72 @@
+.first-login{
+    form{
+        @media (min-width: @screen-sm-min){
+            padding: 0 40px 20px; 
+        }
+    }
+}
+
+// order resume
+.appointment-location{
+    .address{
+        header{
+            .upper;
+            .fw700;
+        }
+    }
+}
+
+
+// order success
+.order-success{
+    header{
+        color: #fff;
+        background-color: @primary;
+        padding: 60px 15px;
+        position: relative;
+        overflow: hidden;
+        span.icon-success{
+            font-size: 85px;
+        }
+        > *:not(img){
+            position: relative;
+        }
+    }
+    .content{
+        .print{
+            display: flex;
+            justify-content: space-around;
+            a{
+                text-decoration: underline;
+            }
+            span.icon-print{
+                display: inline-block;
+                font-size: 42px;
+                text-shadow: 0 0 4px fade(@gray, 35%);
+            }
+        }
+    }
+}
+
+// log attended
+.log-attended{
+    section.division{
+        header{
+            img{
+                width: 100%;
+            }
+        }
+        .content{
+            padding: 0 15px;
+        }
+        footer{
+            padding: 0 15px 15px;
+        }
+    }
+
+    .or{
+        @media (min-width: @screen-sm-min){
+             margin-top: 150px;
+        }
+    }
+}

@@ -1,0 +1,173 @@
+@btn-gray-color:       #fff;
+@btn-gray-bg:          @gray-dark; 
+@btn-gray-border:      @gray-dark;
+
+.btn {
+    .fs18;
+    .upper;
+    .fw600;
+    padding: 11px 12px;
+}
+
+.btn-primary{
+    .font-rendering;
+    &:hover,
+    &:focus,
+    &:active{
+        background: @primary;
+        border-color: @primary;
+    }
+    &:active{
+        &:hover,
+        &:focus{
+            background: @primary;
+            border-color: @primary;
+        }
+    }
+}
+
+.btn-gray{
+    .button-variant(@btn-gray-color; @btn-gray-bg; @btn-gray-border);
+
+    .font-rendering;
+    &:hover,
+    &:focus,
+    &:active{
+        background: @gray-dark;
+        border-color: @gray-dark;
+    }
+    &:active{
+        &:hover,
+        &:focus{
+            background: @gray-dark;
+            border-color: @gray-dark;
+        }
+    }
+}
+
+.btn-gray-light{
+    .button-variant(@primary; @gray-light; @gray-light);
+    .fs16;
+
+    &:hover,
+    &:focus,
+    &:active{
+        background: @gray;
+        border-color: @gray;
+    }
+    &:active{
+        &:hover,
+        &:focus{
+            background: @gray;
+            border-color: @gray;
+        }
+    }
+}
+
+.btn-green{
+    .button-variant(#fff; @wim-green; @wim-green);
+    .fs16;
+
+    &:hover,
+    &:focus,
+    &:active{
+        background: @wim-green;
+        border-color: @wim-green;
+    }
+    &:active{
+        &:hover,
+        &:focus{
+            background: @wim-green;
+            border-color: @wim-green;
+        }
+    }
+}
+
+.btn-purple{
+    .button-variant(#fff; @wim-purple; @wim-purple);
+    .fs16;
+
+    &:hover,
+    &:focus,
+    &:active{
+        background: @wim-purple;
+        border-color: @wim-purple;
+    }
+    &:active{
+        &:hover,
+        &:focus{
+            background: @wim-purple;
+            border-color: @wim-purple;
+        }
+    }
+}
+
+.btn-lg{
+    .fs22;
+}
+
+.btn-xs{
+    .fs12;
+    .upper;
+    font-weight: 700;
+    padding-bottom: @padding-xs-vertical - 1;
+}
+
+.btn-large{
+     padding-left: 50px;
+    padding-right: 50px;
+}
+
+
+@media (max-width: 480px){
+    .btn-wrap{
+        white-space: normal;
+    }
+}
+
+.kv-file-remove {
+    .icon;
+    .icon-close;
+}
+
+.btn-status{
+    padding: 6px 12px;
+    .fs14;
+    width: 160px;
+    max-width: 100%;
+    white-space: normal;
+    &:not(.upper){
+        text-transform: none;
+        font-weight: 300;
+    }
+}
+
+.btn{
+    &.btn-status-confirmed{
+        .button-variant(#fff; #2377ba; #2377ba);
+    }
+
+    &.btn-status-pending{
+        .button-variant(#fff; #35c2e1; #35c2e1);
+    }
+
+    &.btn-status-validated{
+        .button-variant(#fff; #3f51b5; #3f51b5);
+    }
+
+    &.btn-status-delivered{
+        .button-variant(#fff; #1ec25b; #1ec25b);
+    }
+
+    &.btn-status-cancelled{
+        .button-variant(#fff; #f39c12; #f39c12);
+    }
+
+    &.btn-status-altered{
+        .button-variant(#fff; #8e44ad; #8e44ad);
+    }
+
+    &.btn-status-delete{
+        .button-variant(#fff; #e83642; #e83642);
+    }
+}

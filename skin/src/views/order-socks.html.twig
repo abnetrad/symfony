@@ -1,0 +1,84 @@
+{# index.twig #}
+{% extends "./extends/layout.html.twig" %}
+ 
+{% block container %}
+    <h1>New order <br>Wimbledon 2017</h1>
+
+    <div class="row">
+        <main class="col-md-8">
+            <form action="order-step-2.html.twig">
+                <div class="division shadow product-listing mb-30">
+                    <div class="text-center">
+                        <h4>Step 1 of 2: choose your sizes</h4>
+                    </div>
+                    <div>
+                        <a href="#size-guide" type="button" class="btn btn-gray-light" data-toggle="modal"><span class="icon-meter gray-font mr-10 fs18"></span>Size guide</a>
+                    </div>
+                
+                    <div class="row flex mt-10">
+                        
+                        {% for product in products %}
+                            <div class="col-lg-4 col-xs-6 col-xxs-12 mb-30">
+                                <section class="division">
+                                    <header>
+                                        <h3 class="h4 mb-20 text-center">{{ product.title }}</h3>
+                                    </header>
+                                    <div class="content text-center">                                            
+                                        <img src="uploads/{{ product.image }}" alt="">
+                                    </div>
+                                    <footer>
+                                        <div class="form-group">
+                                            <label for="quantity" class="required">Quantity</label>
+                                            <input type="text" value="1" disabled>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="size" class="required">Size</label>
+                                            <select id="size" name="size" required>
+                                                <option value="value-size-00" selected disabled>ONE</option>
+                                                <option value="value-size-01">ONE</option>
+                                                <option value="value-size-02">TWO</option>
+                                                <option value="value-size-03">THREE</option>
+                                            </select>
+                                        </div>
+                                    </footer>
+                                </section>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="text-right">
+                    <button class="btn btn-primary btn-large mb-30">Go to step 2</button>
+                </div>
+            </form>
+        </main>
+
+        <aside class="col-md-4 hidden-xs hidden-sm">
+            <img src="uploads/upload-04.jpg" alt="" class="mb-30">
+        </aside>
+    </div>
+
+
+    <div class="modal fade" id="size-guide">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title text-center">Size Guide</h4>
+                </div>
+                <div class="modal-body">
+                    <h3>Vêtements</h3>
+                    <img src="images/size_guide_clothes.png" alt="">
+                    <h3>Costumes, vestes & blazers</h3>
+                    <img src="images/size_guide_suit.png" alt="">
+                    <h3>Belt</h3>
+                    <img src="images/size_guide_belt.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,110 @@
+table{
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+
+    > thead,
+    > tbody,
+    > tfoot{
+        > tr{
+            > th,
+            > td{
+                padding: 8px 15px;
+                text-align: center;
+            }
+
+            > th{
+                .upper;
+            }
+
+            th, td{
+                border-left: 1px solid @gray;
+                border-right: 1px solid @gray;
+            }
+
+        }
+    }
+    
+    tbody{
+        tr{
+            border-top: 1px solid @gray;
+
+        }
+    }
+
+    th{
+        color: @gray-darker;
+    }
+}
+
+table.table:not(.cols){
+    > thead,
+    > tbody,
+    > tfoot{
+        > tr{
+            > th,
+            > td{
+                &:nth-child(even){
+                    background-color: @gray-light;
+                }
+            }
+        }
+    }
+}
+
+table.table.cols{
+    > thead{
+        > tr{
+            >th:nth-child(even){
+                background-color: @gray-light;
+            }
+        }
+    }
+    > tbody,
+    > tfoot{
+        > tr{
+            > th,
+            > td{
+                &:nth-child(2),
+                &:nth-child(3),
+                &:nth-child(6),
+                &:nth-child(7),
+                &:nth-child(10),
+                &:nth-child(11),
+                &:nth-child(14),
+                &:nth-child(15){
+                    background: @gray-light;
+                }
+            }
+        }
+    }
+}
+
+
+.table-responsive {
+  overflow-x: auto;
+  min-height: 0.01%;
+
+width: 100%;
+margin-bottom: (@line-height-computed * 0.75);
+overflow-y: hidden;
+-ms-overflow-style: -ms-autohiding-scrollbar;
+border: 1px solid @table-border-color;
+
+// Tighten up spacing
+> table {
+  margin-bottom: 0;
+
+  // Ensure the content doesn't wrap
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        white-space: nowrap;
+      }
+    }
+  }
+}
+}

@@ -1,0 +1,29 @@
+{# index.twig #}
+{% extends "./extends/layout.html.twig" %}
+ 
+{% block container %}
+    <main>
+        <h1>NEW ORDER <br>
+        WIMBLEDON 2017</h1>
+
+        <div class="row flex around-xs new-order">
+            <div class="col-md-4 col-xs-6 col-xxs-12 mb-30">
+                <a href="order-step-01.html" class="division section">
+                    <header class="hidden-xxs">
+                        <img src="uploads/upload-02.jpg" alt="">
+                    </header>
+                    <button class="content btn btn-primary wrap"><span>You didn't attend 2016 fittings</span></button>
+                </a>
+            </div>
+
+            <div class="col-md-4 col-xs-6 col-xxs-12 mb-30">
+                <a href="attended-2016.html" class="division section">
+                    <header class="hidden-xxs">
+                        <img src="uploads/upload-01.jpg" alt="">
+                    </header>
+                    <button class="content btn btn-primary wrap"><span>You attended 2016 fittings</span></button>
+                </a>
+            </div>
+        </div>
+    </main>
+{% endblock %}

@@ -1,0 +1,102 @@
+
+.table {
+    &.list {
+        .sonata-ba-list-field.sonata-ba-list-field-image,
+        .sonata-ba-list-field-header-image {
+            display: none;
+        }
+    }
+
+    &.mosaic {
+        > thead{
+            display: block;
+            width: 100%;
+            tr {
+                display: block;
+                width: 100%;
+                th {
+                    border: 0 none;
+                    + th {
+                        display: none;
+                    }  
+                } 
+            }
+        }
+
+        > tbody {
+            width: 100%;
+            display: flex;
+            flex-flow: row wrap;
+
+            > tr {
+                display: flex;
+                flex-flow: column nowrap;
+                flex: 0 0 100%;
+                max-width: 100%;
+                @media (min-width: 481px){
+                    flex: 0 0 50%;
+                    max-width: 50%;
+                }
+                @media (min-width: @screen-sm-min){
+                    flex: 0 0 33.3333%;
+                    max-width: 33.3333%;
+                }
+                @media (min-width: @screen-md-min){
+                    flex: 0 0 25%;
+                    max-width: 25%;
+                }
+
+                + tr {
+                    border-top: 1px solid #ccc;
+                }
+
+                td {
+                    display: block;
+                    border: 0 none;
+                }
+
+                .sonata-ba-list-field {
+                    border: none;
+                    &.sonata-ba-list-field-batch {
+                        background: transparent none repeat scroll 0 0;
+                        position: absolute;
+                    }
+                    &.sonata-ba-list-field-image {
+                        flex-grow: 1;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.btn{
+    &.btn-status-confirmed{
+        .button-variant(#fff; #2377ba; #2377ba);
+    }
+
+    &.btn-status-pending{
+        .button-variant(#fff; #35c2e1; #35c2e1);
+    }
+
+    &.btn-status-validated{
+        .button-variant(#fff; #3f51b5; #3f51b5);
+    }
+
+    &.btn-status-delivered{
+        .button-variant(#fff; #1ec25b; #1ec25b);
+    }
+
+    &.btn-status-cancelled{
+        .button-variant(#fff; #f39c12; #f39c12);
+    }
+
+    &.btn-status-altered{
+        .button-variant(#fff; #8e44ad; #8e44ad);
+    }
+
+    &.btn-status-delete{
+        .button-variant(#fff; #e83642; #e83642);
+    }
+}

@@ -1,0 +1,406 @@
+{# index.twig #}
+{% extends "./extends/layout.html.twig" %}
+ 
+{% block container %}
+
+    <h1>New order <br>Wimbledon 2017</h1>
+
+    <div class="row">
+        <main class="col-md-8">
+            <form action="order-step-2.html.twig">
+                <div class="division shadow product-listing mb-30">
+                    <div class="text-center">
+                        <h4>Step 1 of 2: choose your sizes</h4>
+                    </div>
+                    <div>
+                        <a href="#size-guide" type="button" class="btn btn-green" data-toggle="modal"><i class="icon-meter mr-10 fs18"></i>Size guide</a>
+                    </div>
+                
+                    <div class="row flex mt-10">
+                        
+                        {% for product in products %}
+                            <div class="col-lg-4 col-xs-6 col-xxs-12 mb-30">
+                                <section class="division">
+                                    <header>
+                                        <h3 class="h4 mb-20 text-center">{{ product.title }}</h3>
+                                    </header>
+                                    <div class="content text-center">                                            
+                                        <img src="uploads/{{ product.image }}" alt="">
+                                    </div>
+                                    <footer>
+                                        <div class="form-group">
+                                            <label for="quantity" class="required">Quantity</label>
+                                            <input type="text" value="1" disabled>
+                                        </div>
+                                        <div class="form-group has-error">
+                                            <label for="size" class="required">Size</label>
+                                            <select id="size" name="size" required>
+                                                <option value="value-size-00" selected disabled>ONE</option>
+                                                <option value="value-size-01">ONE</option>
+                                                <option value="value-size-02">TWO</option>
+                                                <option value="value-size-03">THREE</option>
+                                            </select>
+
+                                            <ul>
+                                                <li>You must select a size</li>
+                                            </ul>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="reason-of-reorder" class="sr-only">Reason for reorder</label>
+                                            <select id="reason-of-reorder" name="reason-of-reorder" >
+                                                <option value="value-reason-of-reorder-00" selected disabled>Reason for reorder</option>
+                                                <option value="value-reason-of-reorder-01">option 01</option>
+                                                <option value="value-reason-of-reorder-02">option 02</option>
+                                                <option value="value-reason-of-reorder-03">option 03</option>
+                                            </select>
+                                        </div>
+                                    </footer>
+                                </section>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="text-right">
+                    
+                </div>
+                <div class="order-nav mb-15">
+                    <a href="order-step-01.html" class="btn btn-gray mb-15">< Back</a>
+                    <button class="btn btn-primary mb-15">Go to step 2</button>
+                </div>
+            </form>
+        </main>
+
+        <aside class="col-md-4 hidden-xs hidden-sm">
+            <img src="uploads/upload-04.jpg" alt="" class="mb-30">
+            <img src="uploads/upload-05.jpg" alt="" class="mb-30">
+            <img src="uploads/upload-06.jpg" alt="" class="mb-30">
+            <img src="uploads/upload-07.jpg" alt="" class="mb-30">
+        </aside>
+    </div>
+
+
+    <div class="modal fade" id="size-guide">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title text-center">Size Guide</h4>
+                </div>
+                <div class="modal-body">
+                    <h3>Shoes</h3>
+
+<div class="table-responsive">
+<table>
+    <thead>
+    </thead>
+    <tbody>
+        <tr>
+            <th>US</th>
+            <td>5</td>
+            <td>5.5</td>
+            <td>6</td>
+            <td>6.5</td>
+            <td>7</td>
+            <td>7.5</td>
+            <td>8</td>
+            <td>8.5</td>
+            <td>9</td>
+            <td>9.5</td>
+            <td>10</td>
+            <td>10.5</td>
+            <td>11</td>
+            <td>11.5</td>
+            <td>12</td>
+        </tr>
+        <tr>
+            <th>UK</th>
+            <td>2.5</td>
+            <td>3</td>
+            <td>3.5</td>
+            <td>4</td>
+            <td>4.5</td>
+            <td>5</td>
+            <td>5.5</td>
+            <td>6</td>
+            <td>6.5</td>
+            <td>7</td>
+            <td>7.5</td>
+            <td>8</td>
+            <td>8.5</td>
+            <td>9</td>
+            <td>9.5</td>
+        </tr>
+        <tr>
+            <th>EU</th>
+            <td>36</td>
+            <td>36.5</td>
+            <td>37</td>
+            <td>37.5</td>
+            <td>38</td>
+            <td>38.5</td>
+            <td>39</td>
+            <td>39.5</td>
+            <td>40</td>
+            <td>40.5</td>
+            <td>41</td>
+            <td>41.5</td>
+            <td>42</td>
+            <td>42.5</td>
+            <td>43</td>
+        </tr>
+        <tr>
+            <th>CMS</th>
+            <td>22</td>
+            <td>22.5</td>
+            <td>23</td>
+            <td>23.5</td>
+            <td>24</td>
+            <td>24.5</td>
+            <td>25</td>
+            <td>25.5</td>
+            <td>26</td>
+            <td>26.5</td>
+            <td>27</td>
+            <td>27.5</td>
+            <td>28</td>
+            <td>28.5</td>
+            <td>29</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<h3>Belt</h3>
+
+<div class="table-responsive">
+<table>
+    <thead>
+        <tr>
+            <th>&nbsp;</th>
+            <th scope="col">XS</th>
+            <th scope="col">S</th>
+            <th scope="col">M</th>
+            <th scope="col">L</th>
+            <th scope="col">XL</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th rowspan="2">WAIST</th>
+            <td>28&quot;</td>
+            <td>30&quot;</td>
+            <td>33&quot;</td>
+            <td>36&quot;</td>
+            <td>39&quot;</td>
+        </tr>
+        <tr>
+            <td>71 cm</td>
+            <td>76 cm</td>
+            <td>84 cm</td>
+            <td>91.5 cm</td>
+            <td>99 cm</td>
+        </tr>
+        <tr>
+            <th rowspan="2">HIP</th>
+            <td>29&quot;</td>
+            <td>31&quot;</td>
+            <td>34&quot;</td>
+            <td>37&quot;</td>
+            <td>40&quot;</td>
+        </tr>
+        <tr>
+            <td>74 cm</td>
+            <td>79 cm</td>
+            <td>86.5 cm</td>
+            <td>94 cm</td>
+            <td>102 cm</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<h3>Apparel</h3>
+
+<div class="table-responsive">
+<table>
+    <thead>
+        <tr>
+            <th>&nbsp;</th>
+            <th colspan="4">XS</th>
+            <th colspan="4">S</th>
+            <th colspan="4">M</th>
+            <th colspan="4">L</th>
+            <th colspan="4">XL</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>US</th>
+            <td colspan="2">0</td>
+            <td colspan="2">2</td>
+            <td colspan="2">4</td>
+            <td colspan="2">6</td>
+            <td colspan="2">8</td>
+            <td colspan="2">10</td>
+            <td colspan="2">12</td>
+            <td colspan="2">14</td>
+            <td colspan="2">16</td>
+            <td colspan="2">18</td>
+        </tr>
+        <tr>
+            <th>UK</th>
+            <td colspan="2">4</td>
+            <td colspan="2">6</td>
+            <td colspan="2">8</td>
+            <td colspan="2">10</td>
+            <td colspan="2">12</td>
+            <td colspan="2">14</td>
+            <td colspan="2">16</td>
+            <td colspan="2">18</td>
+            <td colspan="2">20</td>
+            <td colspan="2">22</td>
+        </tr>
+        <tr>
+            <th>FR</th>
+            <td colspan="2">32</td>
+            <td colspan="2">34</td>
+            <td colspan="2">36</td>
+            <td colspan="2">38</td>
+            <td colspan="2">40</td>
+            <td colspan="2">42</td>
+            <td colspan="2">44</td>
+            <td colspan="2">46</td>
+            <td colspan="2">48</td>
+            <td colspan="2">50</td>
+        </tr>
+        <tr>
+            <th>DE</th>
+            <td colspan="2">30</td>
+            <td colspan="2">32</td>
+            <td colspan="2">34</td>
+            <td colspan="2">36</td>
+            <td colspan="2">38</td>
+            <td colspan="2">40</td>
+            <td colspan="2">42</td>
+            <td colspan="2">44</td>
+            <td colspan="2">46</td>
+            <td colspan="2">48</td>
+        </tr>
+        <tr>
+            <th>IT</th>
+            <td colspan="2">36</td>
+            <td colspan="2">38</td>
+            <td colspan="2">40</td>
+            <td colspan="2">42</td>
+            <td colspan="2">44</td>
+            <td colspan="2">46</td>
+            <td colspan="2">48</td>
+            <td colspan="2">50</td>
+            <td colspan="2">52</td>
+            <td colspan="2">54</td>
+        </tr>
+        <tr>
+            <th>CHEST</th>
+            <td>32&quot;</td>
+            <td>81 cm</td>
+            <td>33&quot;</td>
+            <td>84 cm</td>
+            <td>34&quot;</td>
+            <td>86 cm</td>
+            <td>35&quot;</td>
+            <td>89 cm</td>
+            <td>36&quot;</td>
+            <td>91 cm</td>
+            <td>37&quot;</td>
+            <td>94 cm</td>
+            <td>38.5&quot;</td>
+            <td>97.5 cm</td>
+            <td>40&quot;</td>
+            <td>101.5 cm</td>
+            <td>42&quot;</td>
+            <td>106.5 cm</td>
+            <td>44&quot;</td>
+            <td>111.5 cm</td>
+        </tr>
+        <tr>
+            <th>WAIST</th>
+            <td>25&quot;</td>
+            <td>63.5 cm</td>
+            <td>26&quot;</td>
+            <td>66 cm</td>
+            <td>27&quot;</td>
+            <td>68.5 cm</td>
+            <td>28&quot;</td>
+            <td>71 cm</td>
+            <td>29&quot;</td>
+            <td>73.5 cm</td>
+            <td>30&quot;</td>
+            <td>76 cm</td>
+            <td>31.5&quot;</td>
+            <td>80 cm</td>
+            <td>33&quot;</td>
+            <td>84 cm</td>
+            <td>35&quot;</td>
+            <td>89 cm</td>
+            <td>37&quot;</td>
+            <td>94 cm</td>
+        </tr>
+        <tr>
+            <th>LOW-RISE WAIST</th>
+            <td>28.5&quot;</td>
+            <td>72.5 cm</td>
+            <td>29.5&quot;</td>
+            <td>75 cm</td>
+            <td>30.5&quot;</td>
+            <td>77.5 cm</td>
+            <td>31.5&quot;</td>
+            <td>80 cm</td>
+            <td>32.5&quot;</td>
+            <td>82.5 cm</td>
+            <td>33.5&quot;</td>
+            <td>85 cm</td>
+            <td>35&quot;</td>
+            <td>89 cm</td>
+            <td>36.5&quot;</td>
+            <td>92.5 cm</td>
+            <td>38.5&quot;</td>
+            <td>97.5 cm</td>
+            <td>40.5&quot;</td>
+            <td>102.5 cm</td>
+        </tr>
+        <tr>
+            <th>HIP</th>
+            <td>34.5&quot;</td>
+            <td>87.5 cm</td>
+            <td>35.5&quot;</td>
+            <td>90 cm</td>
+            <td>36.5&quot;</td>
+            <td>92.5 cm</td>
+            <td>37.5&quot;</td>
+            <td>95.5 cm</td>
+            <td>38.5&quot;</td>
+            <td>98 cm</td>
+            <td>39.5&quot;</td>
+            <td>100.5 cm</td>
+            <td>41&quot;</td>
+            <td>104 cm</td>
+            <td>42.5&quot;</td>
+            <td>108 cm</td>
+            <td>44.5&quot;</td>
+            <td>113 cm</td>
+            <td>46.5&quot;</td>
+            <td>118 cm</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+                </div> <!-- /.modal-body -->
+            </div>
+        </div>
+    </div>
+
+
+
+
+{% endblock %}

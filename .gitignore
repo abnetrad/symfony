@@ -1,0 +1,6 @@
+skin/src/admin/fonts
+docker-compose.yml
+log
+**/*.DS_Store
+=
+.idea/

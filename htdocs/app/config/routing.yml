@@ -1,0 +1,51 @@
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+advert_index:
+    path: /advert
+    defaults: { _controller: AppBundle:Advert:index }
+
+product_list:
+    path: /list
+    defaults: { _controller: AppBundle:Product:list }
+
+product_create:
+    path: /create
+    defaults: { _controller: AppBundle:Product:edit }
+
+product_edit:
+    path: /edit/{id}
+    defaults: { _controller: AppBundle:Product:edit }
+
+product_delete:
+    path: /delete/{id}
+    defaults: { _controller: AppBundle:Product:delete }
+
+product_show:
+    path: /show/{id}
+    defaults: { _controller: AppBundle:Product:show }
+
+
+product_home:
+    path: /home
+    defaults: { _controller: AppBundle:Product:index }
+
+
+product_admin:
+    path: /admin
+    defaults: { _controller: AppBundle:Product:admin }
+
+product_user:
+    path: /user
+    defaults: { _controller: AppBundle:Product:user }
+
+login:
+    path:   /login
+    defaults:  { _controller: AppBundle:Product:login }
+
+login_check:
+    path:   /login_check
+
+logout:
+    path:   /logout

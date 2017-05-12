@@ -1,0 +1,59 @@
+{# index.twig #}
+{% extends "./extends/layout.html.twig" %}
+ 
+{% block container %}
+
+    <h1>New order <br>Wimbledon 2017</h1>
+
+    <main class="log-attended mb-90">
+        <div class="row flex">
+            <div class="col-md-4 col-md-offset-1 col-sm-5 col-xs-12">
+                <section class="division mb-30 shadow text-center">
+                    <header class="hidden-xs">
+                        <img src="uploads/log-attended-01.jpg" alt="">
+                    </header>
+                    <div class="content">
+                        <h4>1. You attended 2016</h4>
+                        <p>Your uniform is fully re-usable.
+                        We will provide you with:
+                        a pair of shoes, socks and zip top bag.</p>
+                    </div>
+                    <footer>
+                        <a href="order-socks.html" class="btn btn-primary mb-45">Proceed order</a>
+                    </footer>
+                </section>
+            </div>
+
+            <div class="col-sm-2 col-xs-12 mb-30 text-center">
+                <section>
+                    <div class="text-center fs18 primary fw700 or">
+                        OR
+                    </div>
+                </section>
+            </div>
+
+            <div class="col-md-4 col-sm-5 col-xs-12">
+                <section class="division mb-30 shadow text-center">
+                    <header class="hidden-xs">
+                        <img src="uploads/log-attended-02.jpg" alt="">
+                    </header>
+                    <div class="content">
+                        <h4>2. You attended 2016 uniform</h4>
+                        <p>One or several items of your 2016 is/are not reusable.
+                        We will provide you with: 
+                        a pair of shoes, socks and a zip top bag
+                        + additional items you are requesting</p>
+                    </div>
+                    <footer>
+                        <a href="order-step-01.html" class="btn btn-primary mb-10">Proceed order</a>
+                        <p class="fs12 primary mb-0">Note: your order will require a justification and will have to be approved by the LTA</p>
+                    </footer>
+                </section>
+            </div>
+        </div>
+    </main>
+
+
+
+
+{% endblock %}

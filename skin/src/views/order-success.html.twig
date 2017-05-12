@@ -1,0 +1,42 @@
+{# index.twig #}
+{% extends "./extends/layout.html.twig" %}
+ 
+{% block container %}
+
+    <h1>Order success</h1>
+
+    <main>
+        <div class="division shadow order-success text-center mb-100">
+            <header>
+                <img src="uploads/success-bg.jpg" alt="" class="cover">
+                <div class="mb-40">
+                    <span class="icon-success"></span>
+                </div>
+                <span class="fw700 upper fs18">Thank you !</span>
+            </header>
+            <div class="content pt-30 gutter">
+                <div>
+                    <span class="upper">YOUR ORDER has been SUBMITTED TO THE LTA FOR approval.</span> <br>
+                    You will be notified of the LTA’s decision by e-mail.
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="print mt-50">
+                            <a href="#" class="mb-30">
+                                <img src="images/pdf.png" alt=""> <br>
+                                Print your Order
+                            </a>
+
+                            <a href="#" class="mb-30">
+                                <span class="icon-print green"></span> <br>
+                                Print your Style Guide
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                        
+            </div>
+        </div>
+    </main>
+
+{% endblock %}

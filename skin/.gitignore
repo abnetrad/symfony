@@ -1,0 +1,6 @@
+/node_modules
+/bower_components
+/dist/*.html
+/dist/uploads
+/dist/css/*
+/dist/js/*

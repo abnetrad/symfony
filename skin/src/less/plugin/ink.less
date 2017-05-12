@@ -1,0 +1,33 @@
+[class*=" btn-"],
+[class^="btn-"]{
+  position:relative;
+  overflow:hidden;
+  transition: all 0.2s ease;
+  z-index:0;
+
+    &:hover{
+      z-index:1000;
+    }
+}
+
+.ink {
+  display: block;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 100%;
+  transform: scale(0);
+}
+
+.animate {
+  animation: ripple 0.65s linear;
+}
+
+@keyframes ripple {
+    100% {opacity: 0; transform: scale(2.5);}
+}
+
+
+.btn-white .ink{
+  background: fade(@primary, 15%);
+}
+

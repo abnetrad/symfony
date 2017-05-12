@@ -1,0 +1,131 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\Common\Collections\Collection;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="order")
+ */
+class Order
+{
+
+    /**
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @ORM\Column(type="date", name="ordered_in")
+     */
+    private $orderDate;
+
+    /**
+     * @ORM\Column(type="date", name="delivered_in")
+     */
+    private $deliveryDate;
+
+    /**
+     * @ORM\Column(type="decimal", scale=2)
+     */
+    private $amount;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Product", mappedBy="order")
+     * @var Collection
+     */
+    private $products;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Customer", inversedBy="orders")
+     * @ORM\JoinColumn(name="customer_id", referencedColumnName="id")
+     * @var Customer
+     */
+    private $customer;
+
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set orderDate
+     *
+     * @param \DateTime $orderDate
+     * @return Order
+     */
+    public function setOrderDate($orderDate)
+    {
+        $this->orderDate = $orderDate;
+
+        return $this;
+    }
+
+    /**
+     * Get orderDate
+     *
+     * @return \DateTime 
+     */
+    public function getOrderDate()
+    {
+        return $this->orderDate;
+    }
+
+    /**
+     * Set deliveryDate
+     *
+     * @param \DateTime $deliveryDate
+     * @return Order
+     */
+    public function setDeliveryDate($deliveryDate)
+    {
+        $this->deliveryDate = $deliveryDate;
+
+        return $this;
+    }
+
+    /**
+     * Get deliveryDate
+     *
+     * @return \DateTime 
+     */
+    public function getDeliveryDate()
+    {
+        return $this->deliveryDate;
+    }
+    
+
+    /**
+     * Set amount
+     *
+     * @param string $amount
+     * @return Order
+     */
+    public function setAmount($amount)
+    {
+        $this->amount = $amount;
+
+        return $this;
+    }
+
+    /**
+     * Get amount
+     *
+     * @return string 
+     */
+    public function getAmount()
+    {
+        return $this->amount;
+    }
+}

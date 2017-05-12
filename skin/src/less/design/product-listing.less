@@ -1,0 +1,39 @@
+.product-listing{
+    padding: 0 30px;
+    @media (min-width: @screen-sm-min){
+        padding: 0 60px;     
+    }
+
+    section{
+        padding: 0 12px;
+        > header{
+            flex-grow: 1 !important;
+        }
+        > .content{
+            padding-bottom: 20px;
+            flex-grow: 0 !important;
+        }
+
+        footer{
+            .form-group{
+                display: flex;
+                flex-flow: row wrap;
+                align-items: center;
+                label{
+                    padding-right: 10px;
+                }
+
+                label,
+                select{
+                    flex: 1 1 auto;
+                    width: auto;
+                }
+                input{
+                    flex: 0 1 70px;
+                    width: 70px;
+                    max-width: 70px;
+                }
+            }
+        }
+    }
+}
