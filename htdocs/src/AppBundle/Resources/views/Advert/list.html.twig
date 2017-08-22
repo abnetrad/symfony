@@ -11,9 +11,8 @@
         {%  for product in products %}
 
             <li><a href="{{ path('product_show', {'id':product.id}) }}"> {{ product.id }} |  {{ product.name }} </a> -
-               <a href="{{ path('product_delete', {'id':product.id}) }}">   <button> Supprimer!  </button> </a>
-               <a href="{{ path('product_edit', {'id':product.id}) }}">   <button> Modifier!  </button> </a>
-
+               <a href="{{ path('product_delete', {'id':product.id}) }}">   <button> X  </button> </a>
+               <a href="{{ path('product_edit', {'id':product.id}) }}" >   <button> Modifier!  </button> </a>
             </li>
             {% endfor %}
     </ul>

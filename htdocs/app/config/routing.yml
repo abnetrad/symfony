@@ -32,20 +32,15 @@ product_home:
     defaults: { _controller: AppBundle:Product:index }
 
 
-product_admin:
-    path: /admin
-    defaults: { _controller: AppBundle:Product:admin }
+product_happy:
+    path: /happy
+    defaults: { _controller: AppBundle:Product:new }
+
 
 product_user:
     path: /user
     defaults: { _controller: AppBundle:Product:user }
 
-login:
-    path:   /login
-    defaults:  { _controller: AppBundle:Product:login }
-
-login_check:
-    path:   /login_check
-
-logout:
-    path:   /logout
+admin_area:
+    resource: "@SonataAdminBundle/Resources/config/routing/sonata_admin.xml"
+    prefix: /admin

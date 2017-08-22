@@ -5,7 +5,6 @@ syncs:
   #IMPORTANT: ensure this name is unique and does not match your other application container name
   symfony-unison-sync:
     src: './htdocs'
-    dest: '/data'
     notify_terminal: false
     sync_host_ip: '127.0.0.1'
     sync_user: 'www-data'

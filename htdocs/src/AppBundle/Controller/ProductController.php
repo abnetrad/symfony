@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Product;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use AppBundle\Form\ProductType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,23 +15,26 @@ class ProductController extends Controller
 
     public function indexAction()
     {
-        return $this->render('AppBundle:Advert:home.html.twig', array('nom' => 'BIENVENUE chez GEEKstore !!  ^^  ' ));
+        return $this->render('AppBundle:Advert:home.html.twig', array('nom' => 'BIENVENUE chez GEEKstore !!  ^^  '));
     }
 
     public function listAction()
     {
+        //$logger = $this->container->get('logger');
+        //$logger->info('Look! I just used a service');
+
 
         $products = $this->getDoctrine()->getRepository('AppBundle:Product')->findAll();
 
         return $this->render('AppBundle:Advert:list.html.twig', array(
-            'products'=> $products
+            'products' => $products
         ));
     }
 
-    public function editAction(Request $request, Product $product  = null)
+    public function editAction(Request $request, Product $product = null)
     {
 
-       //si le produit est null on en crée un nouveau
+        //si le produit est null on en crée un nouveau
 
         if ($product === null) {
             $product = new Product();
@@ -44,7 +48,7 @@ class ProductController extends Controller
 
 
         if ($form->isSubmitted()) {
-        // on récupère les données déja existants . unitil de le faire avant car on attend que ce soit submitted "ARTHUR"
+            // on récupère les données déja existants . unitil de le faire avant car on attend que ce soit submitted "ARTHUR"
             $product = $form->getData();
             $em = $this->getDoctrine()->getManager();
             $em->persist($product);
@@ -66,25 +70,24 @@ class ProductController extends Controller
 
         $product = $em->getRepository('AppBundle:Product')->find($id);
 
-        if(!$product){
-            return $this->redirectToRoute ('product_list');
+        if (!$product) {
+            return $this->redirectToRoute('product_list');
         }
 
         $em->remove($product);
         $em->flush();
-        return new Response('Produit'.' '.$id.' '. 'supprimé!');
+        return new Response('Produit' . ' ' . $id . ' ' . 'supprimé!');
 
     }
 
-    public function showAction ($id)
+    public function showAction($id)
     {
         $product = $this->getDoctrine()
             ->getRepository('AppBundle:Product')
             ->find($id);
 
-        if (!$product)
-        {
-            throw $this->createNotFoundException('No product found for id'.' '.$id);
+        if (!$product) {
+            throw $this->createNotFoundException('No product found for id' . ' ' . $id);
         }
 
         return $this->render('AppBundle:Advert:show.html.twig', array(
@@ -95,9 +98,22 @@ class ProductController extends Controller
         ));
     }
 
-    public function adminAction()
+    public function newAction()
     {
-        return new Response('<html><body>Admin page!</body></html>');
+
+        $messageGenerator = $this->container->get('app.message_generator');
+        /*
+        // or use this shorter syntax
+                // $messageGenerator = $this->get('app.message_generator');
+                $isLoggingEnabled = $this->container
+                    ->getParameter('enable_generator_logging');
+                */
+
+        $message = $messageGenerator->getHappyMessage();
+        $this->addFlash('success', $message);
+
+        return new Response($message);
+
     }
 
     public function userAction()
